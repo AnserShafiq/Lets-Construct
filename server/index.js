@@ -4,7 +4,7 @@ import cors from 'cors';
 import mongoose from 'mongoose';
 
 // Routes:
-
+import WorkerRoute from'./routes/worker.js';
 import newCustomerRoutes from './routes/newCustomer.js';
 import User from './models/newCustomerUser.js';
 const app = express();
@@ -14,6 +14,7 @@ app.use(bodyParser.urlencoded({limit: "30mb", extended: true}));
 app.use(cors());
 
 app.use('/customers',newCustomerRoutes);
+app.use('/workers',WorkerRoute);
 
 
 app.post('/login',async(req,res)=>{
