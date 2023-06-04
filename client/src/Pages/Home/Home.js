@@ -17,6 +17,9 @@ const Home = () =>{
     const handleClick = () => {
         window.open('/Customers');
     };
+    const handleWorkersClick = () => {
+        window.open('/Workers');
+    };
       
     useEffect(()=>{
         document.body.style.backgroundColor = '#7BA1D4';
@@ -39,7 +42,7 @@ const Home = () =>{
                             <img className={Classes.btns} src={customer} alt="customerBtn"/>
                         </div>
                     
-                        <div className={Classes.BoxButton} onClick={handleClick}>
+                        <div className={Classes.BoxButton} onClick={handleWorkersClick}>
                             <img className={Classes.btns} src={worker} alt="workerBtn" />
                         </div>
                         <div className={Classes.BoxButton} onClick={handleClick}>

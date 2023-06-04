@@ -6,6 +6,10 @@ export default makeStyles((theme) => ({
       margin: theme.spacing(1),
     },
   },
+  entryPoint2:{
+    width:'80%',
+    color:'blue',
+  },
   paper: {
     padding: theme.spacing(2),
     backgroundColor: '#688bba',
@@ -32,7 +36,6 @@ export default makeStyles((theme) => ({
   fileInput: {
     width: '97%',
     margin: '10px 0',
-
   },
   formHead:{
     textAlign: 'center',

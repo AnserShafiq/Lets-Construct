@@ -1,5 +1,5 @@
 import React from "react";
-import { TextField, Button, Typography, Paper } from "@material-ui/core";
+import { TextField, Button, Typography, Paper,Select, MenuItem ,InputLabel } from "@material-ui/core";
 import { useState } from "react";
 import useStyles from './styles.js';
 import { useDispatch } from 'react-redux';
@@ -65,8 +65,22 @@ const Form = () => {
         <TextField required name="address" variant="outlined" label="Address" value={newUserData.address} className={Classes.entryPoint} onChange={(e) => setUserData({ ...newUserData, address: e.target.value })} />
 
         <TextField required name="password" variant="outlined" type="password" label="Password - Characters Should Be More Than 6" value={newUserData.password} className={Classes.entryPoint} onChange={checkPassword} error={!isValidPassword} helperText={!isValidPassword ? 'Password should have a length of at least six characters' : ''} />
-
-        <TextField required name="gender" variant="outlined" label="Gender" value={newUserData.gender} className={Classes.entryPoint} onChange={(e) => setUserData({ ...newUserData, gender: e.target.value })} />
+        <InputLabel htmlFor="gender" className={Classes.entryPoint}>Gender</InputLabel>
+        <Select
+          required
+          name="gender"
+          variant="outlined"
+          label="Gender"
+          value={newUserData.gender}
+          className={Classes.entryPoint2}
+          onChange={(e) => setUserData({ ...newUserData, gender: e.target.value })}
+        >
+          
+          <MenuItem value="male">Male</MenuItem>
+          <MenuItem value="female">Female</MenuItem>
+          <MenuItem value="other">Other</MenuItem>
+        </Select>
+        {/* <TextField required name="gender" variant="outlined" label="Gender" value={newUserData.gender} className={Classes.entryPoint} onChange={(e) => setUserData({ ...newUserData, gender: e.target.value })} /> */}
         <div className={Classes.FormBtns}>
           <Button className={Classes.buttonSubmit} variant='contained' color="primary" fullWidth type="submit" onClick={clear} size='large'>Submit</Button>
         </div>

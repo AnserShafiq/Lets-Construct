@@ -107,7 +107,7 @@ const LoginForm = () => {
 
     // Send the login request to the backend API
     try {
-      const response = await fetch('/login', {
+      const response = await fetch('/customersLogin', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

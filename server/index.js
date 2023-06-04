@@ -15,7 +15,7 @@ app.use(cors());
 app.use('/customers', newCustomerRoutes);
 app.use('/worker', newWorkerRoutes);
 
-app.post('/login', async (req, res) => {
+app.post('/customersLogin', async (req, res) => {
   const { emailID, password } = req.body;
   try {
     const user = await User.findOne({ emailID });
