@@ -33,7 +33,7 @@ app.post('/customersLogin', async (req, res) => {
 });
 
 const CONNECTION_URL =
-  'mongodb+srv://one:onetwothree@fyp.8i5tqbr.mongodb.net/?retryWrites=true&w=majority';
+  'mongodb+srv://two:onetwothree@fyp.8i5tqbr.mongodb.net/?retryWrites=true&w=majority';
 const PORT = process.env.PORT || 5000;
 
 mongoose
