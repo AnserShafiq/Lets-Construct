@@ -16,15 +16,16 @@ app.use('/customers', newCustomerRoutes);
 app.use('/worker', newWorkerRoutes);
 
 app.post('/customersLogin', async (req, res) => {
-  const { emailID, password } = req.body;
+  const { fullName, password } = req.body;
   try {
-    const user = await User.findOne({ emailID });
+    const user = await User.findOne({ fullName });
     if (!user) {
       return res.status(404).json({ message: 'Your User Name Not Found.' });
     }
     if (user.password !== password) {
       return res.status(401).json({ message: 'Invalid password' });
     }
+    console.log(`==> ${user}`);
     return res.status(200).json({ message: 'Login successful' });
   } catch (error) {
     console.error('Error:', error);
