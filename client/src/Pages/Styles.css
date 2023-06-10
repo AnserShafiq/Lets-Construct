@@ -4,6 +4,7 @@ body{
 h1{
     font-family: 'Kanit', sans-serif;
 }
-.forForm{
-    /* background-color: aquamarine; */
+
+.hoverPointer:hover{
+    cursor: pointer;
 }

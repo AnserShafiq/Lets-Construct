@@ -1,13 +1,14 @@
 import React from 'react';
 import {Container} from '@material-ui/core';
 import Header from '../../components/Header/header.js';
-import Form from '../../components/newCustomerForm/form.js';
+import Form from '../../components/workers/signUpForm.js';
 import useStyles from './styles.js';
 import { useDispatch } from 'react-redux'; 
 import { useEffect } from 'react';
-import LoginForm from '../../components/loginForm/form.js';
+import LoginForm from '../../components/workers/login.js';
 import '../Styles.css';
 import Footer from '../../components/Header/footer.js';
+
 
 
 const Workers = () =>{

@@ -14,13 +14,13 @@ const Home = () =>{
     const Classes = useStyles();
 
     const dispatch = useDispatch();
-    const handleClick = () => {
+    const handleCustomersClick = () => {
         window.open('/Customers');
     };
     const handleWorkersClick = () => {
         window.open('/Workers');
     };
-      
+
     useEffect(()=>{
         document.body.style.backgroundColor = '#7BA1D4';
     },[dispatch]);
@@ -38,15 +38,15 @@ const Home = () =>{
                         <h3 className={Classes.extraLine} >Are You A...</h3>
                     </div>
                     <div className={Classes.buttonsContainer}>
-                    <div className={Classes.BoxButton} onClick={handleClick}>
-                            <img className={Classes.btns} src={customer} alt="customerBtn"/>
+                        <div className={Classes.BoxButton} onClick={handleCustomersClick}>
+                            <img onHover className={`hoverPointer ${Classes.btns}`} src={customer} alt="customerBtn"/>
                         </div>
                     
                         <div className={Classes.BoxButton} onClick={handleWorkersClick}>
-                            <img className={Classes.btns} src={worker} alt="workerBtn" />
+                            <img className={`hoverPointer ${Classes.btns}`} src={worker} alt="workerBtn" />
                         </div>
-                        <div className={Classes.BoxButton} onClick={handleClick}>
-                            <img className={Classes.btns} src={dealer} alt="dealerBtn"/>
+                        <div className={Classes.BoxButton} onClick={handleCustomersClick}>
+                            <img className={`hoverPointer ${Classes.btns}`} src={dealer} alt="dealerBtn"/>
                         </div>
                     </div>
                 </Container>

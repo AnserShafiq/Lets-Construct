@@ -11,6 +11,8 @@ export default makeStyles(()=>({
         margin: '15px',
         width:'30%',
         height: '15em',
+    },hoverPointer:{
+        cursor:'grab',  
     },
     btns:{
         width:'100%',

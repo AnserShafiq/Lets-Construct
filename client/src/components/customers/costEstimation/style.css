@@ -1,0 +1,41 @@
+.pageLink{
+    margin:-12px 0;
+    padding:0px;
+}
+.linkBtn{
+    text-decoration: none;
+    color:#16427C;
+}
+.linkBtn:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+.centerHeading{
+    text-align: center;
+    font-size: 2.25rem;
+    letter-spacing: 3px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.subSections{
+    display: flex;
+    margin-left: 17%;
+    margin-right: 17%;
+    width: 80%;
+}
+.section1{
+    width:81.5%;
+}
+.section2{
+    width:27.15%;
+}
+.section3{
+    width:40.75%;
+}
+.section4{
+    width:30%;
+    margin-left: 27%;
+}

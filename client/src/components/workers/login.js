@@ -1,19 +1,20 @@
-// LoginForm.js
+// // LoginForm.js
 import React, { useState } from 'react';
 import { TextField, Button, Typography, Paper } from "@material-ui/core";
 import { useDispatch } from 'react-redux';
-import { loginUser} from '../../actions/loginCustomers.js';
-import useStyles from './styles.js';
-import { useNavigate } from 'react-router-dom';
+import { loginUser } from '../../actions/Workers/login.js';
+import useStyles from './stylesForLoginForm.js';
+import {useNavigate} from 'react-router-dom';
 
 const LoginForm = () => {
-  const [fullName, setfullName] = useState('');
+  const [userName, setfullName] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const classes = useStyles();
   const dispatch = useDispatch();
-  const toNavigate = useNavigate();
   
+  const navigation = useNavigate();
+
   const handlefullNameChange = (e) => {
     setfullName(e.target.value);
   };
@@ -27,38 +28,38 @@ const LoginForm = () => {
 
     // Send the login request to the backend API
     try {
-      const response = await fetch('/customers/login', {
+      const response = await fetch('/workers/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ fullName, password }),
+        body: JSON.stringify({ userName, password }),
       });
-      console.log(response);
-      const result2 = await response.json();
-
+      console.log(`On Login Form ===> ${response}`);
+      const result = await response.json();
+      // console.log(data);
       if (response.status === 200) {
         // Login successful
-        // const { _id2 } = result2.data;
-        // const { dataOfUser } = result2.data;
-        // localStorage.setItem('userID',dataOfUser)
-        // localStorage.setItem('userData', JSON.stringify(result2.data))
-        // console.log(`===> ${_id2}`);
+        const { _id }=result.data;
+        localStorage.setItem('userID',_id)
+        localStorage.setItem('userData', JSON.stringify(result.data))
 
         alert("Login Successful");
-        dispatch(loginUser(fullName, password));
-        toNavigate('/Customers/CustomersHome');
+       
+        dispatch(loginUser(userName, password));
 
+        navigation('/Workers/WorkersHome');
+        
         setError('');
       } else {
         // Login failed
-        setError(result2.message);
+        setError(result.message);
       }
     } catch (error) {
       console.error('Error:', error);
       setError('Internal server error');
     }
-    // dispatch(loginUser(fullName, password));
+    dispatch(loginUser(userName, password));
   };
 
   return (
@@ -72,7 +73,7 @@ const LoginForm = () => {
           type="string"
           label="Username"
           className={classes.entryPoint}
-          value={fullName}
+          value={userName}
           onChange={handlefullNameChange}
         />
         <TextField
