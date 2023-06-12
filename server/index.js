@@ -7,31 +7,17 @@ import mongoose from 'mongoose';
 import newCustomerRoutes from './routes/newCustomer.js';
 import newWorkerRoutes from './routes/worker.js';
 import User from './models/newCustomerUser.js';
+import Worker from './models/worker.js';
 const app = express();
 
 app.use(bodyParser.json({ limit: '30mb', extended: true }));
 app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }));
 app.use(cors());
 app.use('/customers', newCustomerRoutes);
-app.use('/worker', newWorkerRoutes);
+app.use('/customers/login',newCustomerRoutes);
+app.use('/workers', newWorkerRoutes);
+app.use('/workers/login',newWorkerRoutes);
 
-app.post('/customersLogin', async (req, res) => {
-  const { fullName, password } = req.body;
-  try {
-    const user = await User.findOne({ fullName });
-    if (!user) {
-      return res.status(404).json({ message: 'Your User Name Not Found.' });
-    }
-    if (user.password !== password) {
-      return res.status(401).json({ message: 'Invalid password' });
-    }
-    console.log(`==> ${user}`);
-    return res.status(200).json({ message: 'Login successful' });
-  } catch (error) {
-    console.error('Error:', error);
-    res.status(500).json({ message: 'Internal server error' });
-  }
-});
 
 const CONNECTION_URL =
   'mongodb+srv://two:onetwothree@fyp.8i5tqbr.mongodb.net/?retryWrites=true&w=majority';
