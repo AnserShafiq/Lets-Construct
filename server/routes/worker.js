@@ -25,18 +25,45 @@ router.post('/login', async (req, res) => {
   });
   router.get('/usernames', async (req, res) => {
     try {
-      // Fetch all workers from the database
       const workers = await Worker.find({}, 'userName');
-  
-      // Extract usernames from the workers
       const usernames = workers.map(worker => worker.userName);
-  
-      // Send the usernames as a response
       res.json(usernames);
     } catch (error) {
       console.log(error);
       res.status(500).json({ message: 'Server Error' });
     }
   });
-
+  router.get('/singleWorkers',async(req,res)=>{
+    const { workType } = req.body;
+    console.log(`In the single worker's router...`)
+    try{
+      const collection = await Worker.find({workType:{ $regex: 'Single_Worker'}});
+      res.json(collection);
+    }catch(error){
+      console.error('Error retrieving people:', error);
+      res.status(500).json({ error: 'Internal server error' });
+    }
+  })
+  router.get('/onlyTeam',async(req,res)=>{
+    const { workType } = req.body;
+    console.log(`In the only team's router...`)
+    try{
+      const collection = await Worker.find({workType:{ $regex: 'Group_Of_Workers'}});
+      res.json(collection);
+    }catch(error){
+      console.error('Error retrieving people:', error);
+      res.status(500).json({ error: 'Internal server error' });
+    }
+  })
+  router.get('/contractorWithTeam',async(req,res)=>{
+    const { workType } = req.body;
+    console.log(`In the contractor with team's router...`)
+    try{
+      const collection = await Worker.find({workType:{ $regex: 'Contractor_With_Workers'}});
+      res.json(collection);
+    }catch(error){
+      console.error('Error retrieving people:', error);
+      res.status(500).json({ error: 'Internal server error' });
+    }
+  })
 export default router;

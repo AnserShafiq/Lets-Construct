@@ -26,13 +26,8 @@ router.post('/login', async (req, res) => {
   });
   router.get('/usernames', async (req, res) => {
     try {
-      // Fetch all workers from the database
       const customers = await User.find({}, 'fullName');
-  
-      // Extract usernames from the workers
       const usernames = customers.map(customer => customer.fullName);
-  
-      // Send the usernames as a response
       res.json(usernames);
     } catch (error) {
       console.log(error);

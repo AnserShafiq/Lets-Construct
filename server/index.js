@@ -17,6 +17,9 @@ app.use('/customers', newCustomerRoutes);
 app.use('/customers/login',newCustomerRoutes);
 app.use('/workers', newWorkerRoutes);
 app.use('/workers/login',newWorkerRoutes);
+app.use('/workers/singleWorkers',newWorkerRoutes);
+app.use('/workers/onlyTeam',newWorkerRoutes);
+app.use('/workers/contractorWithTeam',newWorkerRoutes);
 
 
 const CONNECTION_URL =
