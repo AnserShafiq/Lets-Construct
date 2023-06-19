@@ -7,6 +7,8 @@ import Workers from './Pages/Workers/home.js';
 import WorkersHome from './components/workers/SubPages/home.js';
 import WorkerSearch from './components/customers/workersorlabors/page.js'
 import CostEstimation from './components/customers/costEstimation/page.js'
+import ProductDealers from './Pages/ProductDealers/Home.js';
+import ProductDealersHome from './components/productDealers/SubPages/home.js';
 const App = () =>{
     return(
         <>
@@ -18,6 +20,8 @@ const App = () =>{
                 <Route path='/Workers/WorkersHome' element={<WorkersHome/>}/>
                 <Route path='/Customers/CustomersHome/WorkersSearch' element={<WorkerSearch/>}/>
                 <Route path='/Customers/CustomersHome/CostEstimation' element={<CostEstimation/>}/>
+                <Route path='/ProductDealers' element={<ProductDealers/>}/>
+                <Route path='/ProductDealers/Home' element={<ProductDealersHome/>}/>
             </Routes>
         </>
         

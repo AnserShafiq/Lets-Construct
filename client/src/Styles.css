@@ -1,6 +1,22 @@
+
 body{
     background-color:'red',
 }
 h1{
     font-family: 'Kanit', sans-serif;
 }
+::-webkit-scrollbar {
+    width: 7px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #8390a3; 
+  }
+   
+  ::-webkit-scrollbar-thumb {
+    background:#395273; 
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #4a6486; 
+  }

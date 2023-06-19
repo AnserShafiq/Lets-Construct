@@ -1,0 +1,45 @@
+body{
+    background-color: #7BA1D4;
+    
+}
+
+.dealersBody{
+    /* height: 83vh; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    overflow-y:auto;
+}
+.outsidePaperBody{
+    width: 20%;
+    padding: 0.5% 2%;
+    background-color: #6488b6 !important;
+    border-width: 30px !important;
+    border-radius: 13% !important;
+}
+.paperBody{
+    height: 30vh ;
+    padding-bottom: 3%;
+    background-color: #6488b600 !important;
+    justify-content: center;
+    overflow-y:auto;
+}
+.formTitle{
+    text-align: center !important;
+    color: #16427C;
+    font-size: 20px !important;
+    font-family:inherit;
+    font-weight: 700 !important;
+    text-decoration: underline;
+}
+.productForm{
+    justify-content: center;
+    align-items: center;
+    padding: 0 10%;
+}
+.textFeilds{
+    width: 100%;
+}
+.listHead{
+    font-weight: bold;
+}

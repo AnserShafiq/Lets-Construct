@@ -35,6 +35,7 @@ router.post('/login', async (req, res) => {
   });
   router.get('/singleWorkers',async(req,res)=>{
     const { workType } = req.body;
+    console.log(`WORK TYPE => ${workType}`)
     console.log(`In the single worker's router...`)
     try{
       const collection = await Worker.find({workType:{ $regex: 'Single_Worker'}});

@@ -21,6 +21,9 @@ const Home = () =>{
         window.open('/Workers');
     };
 
+    const handleProductDealersClick=()=>{
+        window.open('/ProductDealers');
+    }
     useEffect(()=>{
         document.body.style.backgroundColor = '#7BA1D4';
     },[dispatch]);
@@ -45,7 +48,7 @@ const Home = () =>{
                         <div className={Classes.BoxButton} onClick={handleWorkersClick}>
                             <img className={`hoverPointer ${Classes.btns}`} src={worker} alt="workerBtn" />
                         </div>
-                        <div className={Classes.BoxButton} onClick={handleCustomersClick}>
+                        <div className={Classes.BoxButton} onClick={handleProductDealersClick}>
                             <img className={`hoverPointer ${Classes.btns}`} src={dealer} alt="dealerBtn"/>
                         </div>
                     </div>

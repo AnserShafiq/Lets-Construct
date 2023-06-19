@@ -2,8 +2,8 @@
 import React, { useState } from 'react';
 import { TextField, Button, Typography, Paper } from "@material-ui/core";
 import { useDispatch } from 'react-redux';
-import { loginUser } from '../../actions/Workers/login.js';
-import useStyles from './stylesForLoginForm.js';
+import { loginUser } from '../../actions/ProductDealers/login.js';
+import useStyles from './stylesForLogin.js';
 import {useNavigate} from 'react-router-dom';
 
 const LoginForm = () => {
@@ -26,9 +26,8 @@ const LoginForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Send the login request to the backend API
     try {
-      const response = await fetch('/workers/login', {
+      const response = await fetch('/ProductDealers/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -46,9 +45,9 @@ const LoginForm = () => {
 
         alert("Login Successful");
        
-        // dispatch(loginUser(userName, password));
+        dispatch(loginUser(userName, password));
 
-        navigation('/Workers/WorkersHome');
+        navigation('/ProductDealers/Home');
         
         setError('');
       } else {

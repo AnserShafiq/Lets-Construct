@@ -6,6 +6,8 @@ import mongoose from 'mongoose';
 // Routes:
 import newCustomerRoutes from './routes/newCustomer.js';
 import newWorkerRoutes from './routes/worker.js';
+import productDealers from './routes/productDealers.js';
+import forProducts from './routes/products.js';
 import User from './models/newCustomerUser.js';
 import Worker from './models/worker.js';
 const app = express();
@@ -20,6 +22,10 @@ app.use('/workers/login',newWorkerRoutes);
 app.use('/workers/singleWorkers',newWorkerRoutes);
 app.use('/workers/onlyTeam',newWorkerRoutes);
 app.use('/workers/contractorWithTeam',newWorkerRoutes);
+app.use('/productdealers',productDealers);
+app.use('/productdealers/login',productDealers);
+app.use('/products',forProducts)
+app.use('/products/:ownerID',forProducts)
 
 
 const CONNECTION_URL =
