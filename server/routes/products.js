@@ -9,7 +9,7 @@ router.get(`/:ownerID`, async (req, res) => {
     const ownerID = req.params.ownerID;
     try {
       const product = await products.find({dealer: ownerID});
-      console.log(`Products From ProductRoute => ${product}`)
+      // console.log(`Products From ProductRoute => ${product}`)
       res.json(product);
     } catch (error) {
       console.log(error);

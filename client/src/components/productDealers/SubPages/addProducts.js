@@ -45,7 +45,6 @@ const AddProducts = () => {
             <TextField required className='textFeilds' name="type" variant="outlined" type="string" label="Product's Type" value={newProduct.type} onChange={(e)=> setProduct((prevProduct)=>({...prevProduct,type:e.target.value}))}/>
             <TextField required className='textFeilds' name="price" variant="outlined" type="number" label="Price" value={newProduct.price} onChange={(e)=> setProduct((prevProduct)=>({...prevProduct,price:e.target.value}))}/>
             <TextField required className='textFeilds' name="quantity" variant="outlined" type="number" label="Quantity" value={newProduct.quantity} onChange={(e)=> setProduct((prevProduct)=>({...prevProduct,quantity:e.target.value}))}/>
-            {/* <TextField required name="dealer" variant="outlined" type="string" label="Dealer's Name" value={newProduct.dealer} onChange={(e)=> setProduct({...newProduct,dealer:e.target.value})}/> */}
             <TextField required className='textFeilds' name="description" variant="outlined" type="string" label="Description" value={newProduct.description} onChange={(e)=> setProduct((prevProduct)=>({...prevProduct,description:e.target.value}))}/>
             <div /*className={classes.FormBtns}*/>
                 <Button variant='contained' color="primary" fullWidth type="submit" size='large'>ADD</Button>

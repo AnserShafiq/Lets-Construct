@@ -8,12 +8,16 @@ import workerLabors from '../../images/workersLabors.png';
 import buildingModels from '../../images/buildingModels.png';
 import productStore from '../../images/productStore.png';
 import {useNavigate} from 'react-router-dom';
+import { useState, useEffect } from 'react';
 
 
 const CustomersHome = () =>{
 
     const navigator = useNavigate();
-    
+    const [userdata] = useState(JSON.parse(localStorage.getItem('userData')));
+    useEffect (()=>{
+        console.log(JSON.parse(localStorage.getItem('userData')))
+    },[]);
     const handleLaborSearch = () =>{
         navigator('/Customers/CustomersHome/WorkersSearch');
     }
@@ -28,7 +32,7 @@ const CustomersHome = () =>{
                 <div maxWidth='lg' className='toDividePage'>
                     <div className='divOne'>
                         <h1 className = 'mainHead'>Hello,</h1>
-                        <h1 className = 'mainHead'>USERNAME</h1>
+                        <h1 className = 'mainHead' style={{textTransform: 'upperCase'}}>{userdata.user.fullName}</h1>
                         <h3 className = 'askingLine'>What are you <br/>looking for?</h3>
                         <img src={magnifierPhoto} className='mangnifierPhoto' alt="magnifierPic"/>
                     </div>

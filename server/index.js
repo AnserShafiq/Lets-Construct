@@ -8,6 +8,7 @@ import newCustomerRoutes from './routes/newCustomer.js';
 import newWorkerRoutes from './routes/worker.js';
 import productDealers from './routes/productDealers.js';
 import forProducts from './routes/products.js';
+import workerOrderPlacement from './routes/workerOrders.js'
 import User from './models/newCustomerUser.js';
 import Worker from './models/worker.js';
 const app = express();
@@ -26,6 +27,7 @@ app.use('/productdealers',productDealers);
 app.use('/productdealers/login',productDealers);
 app.use('/products',forProducts)
 app.use('/products/:ownerID',forProducts)
+app.use('/workerorders',workerOrderPlacement)
 
 
 const CONNECTION_URL =

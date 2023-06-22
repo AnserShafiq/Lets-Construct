@@ -7,10 +7,20 @@ import onlyTeam from '../../../images/onlyTeam.png';
 import contractorWithTeam from '../../../images/contractorWithTeam.png';
 import { useState } from 'react';
 import axios from 'axios';
-
+import Modal from 'react-modal';
+import { TextField } from "@material-ui/core";
+import { createOrder } from '../../../actions/Workers/Orders/createOrders.js';
+import { useDispatch } from 'react-redux';
 const WorkersSearch=()=>{
     const [output,setOutput] = useState([]);
     const [hideInputs, setHideInputs] = useState(false);
+    const [showForm, setHiddenForm] = useState(false);
+    const [orderPlaced, setPlacedOrder] = useState({
+        description: '',
+        orderPlacer: '',
+        orderReceiver: '',
+        orderStatus:'UnAnswered',
+    })
     const handleSinglePersons = async(entry) =>{
         try {
             alert('Checking....')
@@ -52,6 +62,29 @@ const WorkersSearch=()=>{
             console.error('Error fetching people:', error);
           }
     }
+    const toPlaceOrder = () =>{
+        setHiddenForm(true);
+    }
+    const closeForm = () =>{
+        setHiddenForm(false);
+    }
+    const dispatch = useDispatch();
+    const [userdata] = useState(JSON.parse(localStorage.getItem('userData')));
+    const dealersName = userdata.user.fullName;
+    const handlePlacedOrder = async(e) =>{
+        console.log('Inside Handle Placed Order ')
+        e.preventDefault();
+        dispatch(createOrder(orderPlaced))
+        console.log(orderPlaced);
+        alert("Order Got Placed...");
+        setPlacedOrder({
+            description: '',
+            orderPlacer: '',
+            orderReceiver: '',
+            orderStatus: 'UnAnswered',
+          });
+    }
+
     return(
         <>
             <Header/>
@@ -88,6 +121,34 @@ const WorkersSearch=()=>{
                                     <p>Email: {person.emailID}</p>
                                     <p>City: {person.city}</p>
                                     {otherEntries(person)}
+                                    <button onClick={toPlaceOrder} className='toOrderBtn'>To Order</button>
+                                    <Modal isOpen={showForm} onRequestClose={closeForm}>
+                                        <h2 className='modalHead'>Share some description about project</h2>
+                                        <form autoComplete="off" onSubmit={handlePlacedOrder} className='modalForm'>
+                                            
+                                            <TextField
+                                                required
+                                                name="orderReceiverName"
+                                                className='entrySection'
+                                                type="string"
+                                                variant="outlined"
+                                                label="Enter Worker's Username To Whom You Want To Send Order..."
+                                                value={orderPlaced.orderReceiver}
+                                                onChange={(e) => setPlacedOrder({ ...orderPlaced, orderReceiver: e.target.value,orderPlacer: dealersName })}
+                                            />
+                                            <TextField
+                                                required
+                                                name="orderDescription"
+                                                className='entrySection'
+                                                type="string"
+                                                variant="outlined"
+                                                label="Enter Description..."
+                                                value={orderPlaced.description}
+                                                onChange={(e) => setPlacedOrder({ ...orderPlaced, description: e.target.value })}
+                                            />
+                                            <button type='submit' size='large' className='modalBtn'>SUBMIT</button>
+                                        </form>
+                                    </Modal>
                                 </div>
                             </div>
                         )})}

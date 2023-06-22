@@ -54,7 +54,12 @@ const DisplayProducts = () => {
         <h3>Products:</h3>
         <ul>
           {outputProducts.map(product => (
-            <li key={product._id}><span className='listHead'>Title:</span> {product.title}<span className='listHead'>, Quantity:</span> {product.quantity}</li>
+            <li key={product._id}>
+              <span className='listHead'>Title:</span> {product.title}
+              <span className='listHead'>, Type:</span> {product.type}
+              <span className='listHead'>,<br/> Price:</span> {product.price}
+              <span className='listHead'>, Quantity:</span> {product.quantity}
+            </li>
           ))}
         </ul>
       </Paper>

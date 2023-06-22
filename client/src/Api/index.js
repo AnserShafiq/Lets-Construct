@@ -2,6 +2,7 @@ import axios from 'axios';
 
 const url1 = 'http://localhost:5000/products';
 const url2 = 'http://localhost:5000/customers';
+const url11 = 'http://localhost:5000/customers/login';
 const url5 = 'http://localhost:5000/customers/usernames';
 const url3 = 'http://localhost:5000/workers';
 const url4 = 'http://localhost:5000/workers/usernames';
@@ -9,11 +10,16 @@ const url6 = 'http://localhost:5000/workers/login';
 const url7 = 'http://localhost:5000/productdealers';
 const url8 = 'http://localhost:5000/productdealers/usernames';
 const url9 = 'http://localhost:5000/ProductDealers/login';
+const url10 = 'http://localhost:5000/workerOrders';
 
 
 export const createProduct = (newUser) => axios.post(url1, newUser);
 
+export const createOrderForWorker = (newOrder) => axios.post(url10, newOrder);
+
 export const createUser = (newUser) => axios.post(url2, newUser);
+
+export const fetchCustomer = (fullName, password) => axios.post(url11, { fullName, password });
 
 export const fetchUser = (fullName, password) => axios.post(url2, { fullName, password });
 
