@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { createWorker, fetchWorkerUsernames } from '../../actions/Workers/new.js';
 
 const Form = () => {
-  const [isValidEmail, setIsValidEmail] = useState(true);
+  const [isValidEmail, setIsValidEmail] = useState(false);
   const [isValidPassword, setIsValidPassword] = useState(true);
   const [newUserData, setUserData] = useState({
     userName: '',
@@ -40,7 +40,7 @@ const Form = () => {
   
     const isUsernameUnique = checkUsernameUnique(newUserData.userName);
     
-    if (isUsernameUnique) {
+    if (isUsernameUnique && isValidEmail) {
       dispatch(createWorker(newUserData));
       window.location.reload();
     } 
