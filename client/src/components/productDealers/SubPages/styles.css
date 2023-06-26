@@ -9,6 +9,7 @@ body{
     flex-direction: row;
     justify-content: space-around;
     overflow-y:auto;
+    margin-bottom: 16%;
 }
 .outsidePaperBody{
     width: 20%;
@@ -42,4 +43,8 @@ body{
 }
 .listHead{
     font-weight: bold;
+}
+.logBtnPD{
+    margin: 0.2% 0% 0% 94%;
+    background-color: #6488b6;
 }

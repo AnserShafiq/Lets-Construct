@@ -8,16 +8,16 @@ router.post('/',createCustomer);
 router.post('/login', async (req, res) => {
     const { fullName, password } = req.body;
     try {
-      console.log('Customers ===> GET ROUTER');
+      // console.log('Customers ===> GET ROUTER');
       const user = await User.findOne({ fullName });
       if (!user) {
         return res.status(404).json({ message: 'Your User Name Not Found.' });
       }
       if (user.password !== password) {
-        console.log(`${user.password} !== ${password}`)
+        // console.log(`${user.password} !== ${password}`)
         return res.status(401).json({ message: 'Invalid password' });
       }
-      console.log(`==> ${user}`);
+      // console.log(`==> ${user}`);
       return res.status(200).json({ user});
     } catch (error) {
       console.error('Error:', error);

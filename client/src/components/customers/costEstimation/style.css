@@ -23,6 +23,7 @@ input::-webkit-inner-spin-button {
 .subSections{
     display: flex;
     margin-left: 17%;
+    margin-bottom: 3%;
     margin-right: 17%;
     width: 80%;
 }

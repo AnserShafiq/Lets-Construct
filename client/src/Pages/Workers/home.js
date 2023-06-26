@@ -1,6 +1,6 @@
 import React from 'react';
 import {Container} from '@material-ui/core';
-import Header from '../../components/Header/header.js';
+import Header2 from '../../components/Header/header2.js';
 import Form from '../../components/workers/signUpForm.js';
 import useStyles from './styles.js';
 import { useDispatch } from 'react-redux'; 
@@ -22,7 +22,7 @@ const Workers = () =>{
 
     return(
         <>
-            <Header />
+            <Header2 />
             <div className={Classes.A}>
                 <Container maxidth = "lg">
                     <h1 className={Classes.pageTag}>Workers...</h1>

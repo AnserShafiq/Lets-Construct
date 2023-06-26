@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../../Header/header.js';
+import Header1 from '../../Header/header.js';
 import Footer from '../../Header/footer.js';
 import './style.css';
 import { useState } from 'react';
@@ -13,7 +13,7 @@ const WorkersSearch=()=>{
 
     return(
         <>
-            <Header/>
+            <Header1/>
             {/* need to get design */}
             <Footer className='footer'/>
             

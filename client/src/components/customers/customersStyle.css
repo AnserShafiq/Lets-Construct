@@ -9,7 +9,6 @@ body{
 .toDividePage{
     display: flex;
     flex-direction: row;
-    /* padding:0 10px; */
 }
 .divOne{
     display:flex;
@@ -60,4 +59,8 @@ body{
 }
 .btnImg1:hover{
     cursor: pointer;
+}
+.logBtnPD{
+    margin: 0.2% 0% 0% 94%;
+    background-color: #6488b6;
 }

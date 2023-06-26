@@ -55,10 +55,14 @@ const DisplayProducts = () => {
         <ul>
           {outputProducts.map(product => (
             <li key={product._id}>
-              <span className='listHead'>Title:</span> {product.title}
-              <span className='listHead'>, Type:</span> {product.type}
-              <span className='listHead'>,<br/> Price:</span> {product.price}
-              <span className='listHead'>, Quantity:</span> {product.quantity}
+              
+              <div>
+                <span className='listHead'>Title:</span> {product.title}
+                <span className='listHead'>, Type:</span> {product.type}
+                <span className='listHead'>,<br/> Price:</span> {product.price}
+                <span className='listHead'>, Quantity:</span> {product.quantity}
+              </div>
+              
             </li>
           ))}
         </ul>

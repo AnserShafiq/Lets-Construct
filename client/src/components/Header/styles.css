@@ -8,11 +8,19 @@ body,#root{
     background-color: #16427c;
     align-items: center;
     justify-content: center;
+    margin-bottom: -0.5%;
     padding: 0%;
 }
+.sectionOne{
+    display:flex;
+    width: 80%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
 .Header-Logo{
-    width:6%;
-    height: 6%;
+    width:8%;
+    height: 8%;
 }
 .headerHeading{
     margin: 0%;
@@ -20,4 +28,17 @@ body,#root{
     font-size: 3rem;
     letter-spacing: 0.8rem;
     color: #BFBFBF;
+}
+.logoutBtn{
+    font-size: 15px;
+    text-transform: uppercase;
+    color:#BFBFBF;
+    text-decoration: underline;
+    margin-bottom: 0%;
+    margin-right: 0%;
+    padding: 0%;
+}
+.logoutBtn:hover{
+    color: #376aad;
+    cursor: pointer !important;
 }

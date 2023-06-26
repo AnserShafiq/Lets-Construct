@@ -22,6 +22,7 @@ export default makeStyles(()=>({
         display:'flex',
         flexDirection: 'row',
         alignItems: 'center',
+        marginTop:'-10px'
     },
     welcomeSection:{
         color: 'darkBlue',

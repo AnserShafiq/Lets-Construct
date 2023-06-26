@@ -2,6 +2,10 @@ body{
     background-color: #7BA1D4;
 }
 .A{
-    margin: 17.5% 0%;
+    margin: 16.5% 0%;
     text-align: center;
+}
+.logBtnPD{
+    margin: 0.2% 0% 0% 94%;
+    background-color: #6488b6;
 }

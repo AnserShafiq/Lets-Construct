@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../../Header/header.js';
+import Header1 from '../../Header/header.js';
 import Footer from '../../Header/footer.js';
 import './style.css';
 import { useState } from 'react';
@@ -19,12 +19,12 @@ const CostEstimations = () => {
   });
 
   const calculateResult = () => {
-    const perMarlaRate = Number(600000)
+    const perMarlaRate = Number(1000000)
     if(plotData.needMaterial === 'yes')
     {
         setResult(
             <>
-                <h4 className='amountDisplay'>Estimated Amount For The Project's Construction Would Be: {(perMarlaRate*plotData.plotSize*plotData.noOfFloors)+(plotData.plotSize*50000)} Pkr./-</h4>
+                <h4 className='amountDisplay'>Estimated Amount For The Project's Construction Would Be: {(perMarlaRate*plotData.plotSize*plotData.noOfFloors)+(plotData.plotSize*75000)} Pkr./-</h4>
             </>
         )
     }
@@ -40,7 +40,7 @@ const CostEstimations = () => {
 
   return (
     <>
-      <Header />
+      <Header1 />
       <div maxwidth='lg'>
         <div className='pageLink'>
           <h4>=&gt; <a href='/Customers/CustomersHome' className='linkBtn'>Customers</a> =&gt; <a href='/Customers/CustomersHome/CostEstimation' className='linkBtn'>Cost Estimation</a></h4>

@@ -1,6 +1,6 @@
 import React from 'react';
 import {Container} from '@material-ui/core';
-import Header from '../../components/Header/header.js';
+import Header2 from '../../components/Header/header2.js';
 import Form from '../../components/newCustomerForm/form.js';
 import useStyles from './StylesForCustomer.js';
 import { useDispatch } from 'react-redux'; 
@@ -21,9 +21,9 @@ const Customers = () =>{
 
     return(
         <>
-            <Header />
+            <Header2 />
             <div className={Classes.A}>
-                <Container maxidth = "lg">
+                <Container maxidth = "lg" className='customerHome'>
                     <h1 className={Classes.pageTag}>Customers...</h1>
                     <div className={Classes.forForms}>
                         <div className={Classes.forFormOne}>

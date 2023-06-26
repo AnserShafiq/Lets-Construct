@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../../Header/header.js';
+import Header1 from '../../Header/header.js';
 import Footer from '../../Header/footer.js';
 import './style.css';
 import single from '../../../images/single.png';
@@ -39,7 +39,7 @@ const WorkersSearch=()=>{
             )
         }
         else{
-            return(<p>Team's Description: {person.groupDescription}</p>)
+            return(<p >Team's Description:<p className='teamsDescrip'>{person.groupDescription}</p></p>)
         }
     }
     const handleOnlyTeam = async(entry) =>{
@@ -87,7 +87,7 @@ const WorkersSearch=()=>{
 
     return(
         <>
-            <Header/>
+            <Header1/>
             <div className='container'>
                 <div className='content'>
                     <div className='pageLink'>
