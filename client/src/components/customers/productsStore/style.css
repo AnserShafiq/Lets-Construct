@@ -1,0 +1,103 @@
+.pageHead{
+    text-align: center;
+    font-size: 30px;
+    text-transform: capitalize;
+    font-weight: 900 !important;
+    margin-top: 1.3%;
+}
+.searchBar{
+    width:50%;
+    align-self:center;
+}
+.searchSection{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #16427C;
+    border-radius: 20px;
+}
+.searchTag{
+    color: #ffffff;
+    font-size: 20px;
+    padding:0% 2%;
+    margin: 2% 1% 1% 1% ;
+}
+.searchEntry{
+    width:75%;
+    background-color: #BFBFBF;
+    border-radius: 25px;
+    margin: 1% !important;
+    padding-left: 1%;
+    border: none;
+    font-weight: 800;
+    color:#16427C;
+}
+.searchBtn{
+    margin: 2% 3%;
+    background-color: #BFBFBF !important;
+    color: #16427C !important;
+    font-weight: 900 !important;
+    border-radius: 20px !important;
+}
+.searchBtn:hover{
+    background-color: #16427C !important;
+    color:#BFBFBF !important;
+}
+.btnDiv{
+    margin: 1% 45%;
+}
+.productsHead{
+    font-size: 20px;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-decoration: underline;
+    margin: 0% 1%;
+}
+.fourProducts{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0%;
+    margin-top: 0%;
+}
+.productDisplay{
+    display: flex;
+    flex-direction: column;
+    align-items:normal;
+    line-height: 0.5px ;
+    padding: 1% 3%;
+    background-color: #BFBFBF;
+    border-radius: 30px;
+    border: 5px solid #16427C; 
+    margin: 1%;
+}
+.innerHead{
+    font-size: 15px;
+    margin-top:5% ;
+    text-transform: uppercase;
+}
+.innerWord{
+    font-weight: 400;
+    font-size: 15px;
+    text-transform: capitalize;
+}
+.orderBtn{
+    margin: 2% 3%;
+    background-color: #16427C !important;
+    color:#BFBFBF !important;
+    font-weight: 900 !important;
+    border-radius: 20px !important;
+}
+.orderBtn:hover{
+    background-color: #BFBFBF !important;
+    color: #16427C !important;
+}
+.btnDiv2{
+    margin: 0% 28%;
+}
+.allProducts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    justify-content: center;
+  }

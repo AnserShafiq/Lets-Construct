@@ -22,7 +22,7 @@ const AddProducts = () => {
     e.preventDefault();
 
 
-    // FORM IN WHICH WHOLE DATA IS GETTING PACKED TO UPLOAD
+
     const formData = new FormData();
     formData.append('title', title);
     formData.append('type', type);
@@ -36,7 +36,6 @@ const AddProducts = () => {
 
     try {
       await axios.post('/products', formData);
-      alert('Product uploaded successfully');
       setTitle('');
       setType('');
       setPrice('');

@@ -34,6 +34,7 @@ app.use('/productdealers', productDealers);
 app.use('/productdealers/login', productDealers);
 app.use('/products', forProducts);
 app.use('/products/:ownerID', forProducts);
+app.use('/products/productsSearch', forProducts);
 app.use('/workerorders', workerOrderPlacement);
 
 const CONNECTION_URL = 'mongodb+srv://two:onetwothree@fyp.8i5tqbr.mongodb.net/?retryWrites=true&w=majority';
