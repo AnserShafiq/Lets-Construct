@@ -12,6 +12,9 @@ import { TextField } from "@material-ui/core";
 import { createOrder } from '../../../actions/Workers/Orders/createOrders.js';
 import { useDispatch } from 'react-redux';
 const WorkersSearch=()=>{
+    const [singleCheck, showSingleHead] = useState(false);
+    const [team, showTeamHead] = useState(false);
+    const [contractor, showContractorHead] = useState(false);
     const [output,setOutput] = useState([]);
     const [hideInputs, setHideInputs] = useState(false);
     const [showForm, setHiddenForm] = useState(false);
@@ -19,12 +22,17 @@ const WorkersSearch=()=>{
         description: '',
         orderPlacer: '',
         orderReceiver: '',
+        addressOfOrder:'',
         orderStatus:'UnAnswered',
     })
     const handleSinglePersons = async(entry) =>{
         try {
             alert('Checking....')
             setHideInputs(true);
+            showSingleHead(true);
+            showTeamHead(false);
+            showContractorHead(false);
+            
             const response = await axios.get(`/workers/singleWorkers`);
             setOutput(response.data);
           } catch (error) {
@@ -35,15 +43,19 @@ const WorkersSearch=()=>{
         if(person.workType === 'Single_Worker')
         {
             return(
-                <p>Work's As: {person.workCategories}</p>
+                <p><span className='heading'>Work's As:</span> {person.workCategories}</p>
             )
         }
         else{
-            return(<p >Team's Description:<p className='teamsDescrip'>{person.groupDescription}</p></p>)
+            // Teams Description
+            return(<p><span className='heading'>Team's Description:</span><p className='teamsDescrip'>{person.groupDescription}</p></p>)
         }
     }
     const handleOnlyTeam = async(entry) =>{
         try {
+            showSingleHead(false);
+            showTeamHead(true);
+            showContractorHead(false);
             alert('Checking....')
             setHideInputs(true);
             const response = await axios.get(`/workers/onlyTeam`);
@@ -54,6 +66,9 @@ const WorkersSearch=()=>{
     }
     const handleContractorWithTeam = async(entry) =>{
         try {
+            showSingleHead(false);
+            showTeamHead(false);
+            showContractorHead(true);
             alert('Checking....')
             setHideInputs(true);
             const response = await axios.get(`/workers/contractorWithTeam`);
@@ -62,7 +77,8 @@ const WorkersSearch=()=>{
             console.error('Error fetching people:', error);
           }
     }
-    const toPlaceOrder = () =>{
+    const toPlaceOrder = (person) =>{
+        orderPlaced.orderReceiver = person.userName;
         setHiddenForm(true);
     }
     const closeForm = () =>{
@@ -81,8 +97,10 @@ const WorkersSearch=()=>{
             description: '',
             orderPlacer: '',
             orderReceiver: '',
+            addressOfOrder:'',
             orderStatus: 'UnAnswered',
           });
+        closeForm();
     }
 
     return(
@@ -102,39 +120,55 @@ const WorkersSearch=()=>{
                             </div>
                             <div className='btnsSection'>
                                 <img src={single} className='btnImg2' alt='singleWorker' onClick={()=>handleSinglePersons('singleWorkers')}/>
-                                <img src={onlyTeam} className='btnImg2' alt='onlyTeam' onClick={()=>handleOnlyTeam('singleWorkers')}/>
-                                <img src={contractorWithTeam} className='btnImg2' alt='contractorWithTeam' onClick={()=>handleContractorWithTeam('singleWorkers')}/>
+                                <img src={onlyTeam} className='btnImg2' alt='onlyTeam' onClick={()=>handleOnlyTeam('onlyTeam')}/>
+                                <img src={contractorWithTeam} className='btnImg2' alt='contractorWithTeam' onClick={()=>handleContractorWithTeam('contractorWithTeam')}/>
                             </div>
                         </div>
                     )}
                     <div>
                     <span>{hideInputs }</span>
                     <span>
+                        {singleCheck === true &&(
+                            <div className='pageHead'>
+                                <h3>Single Worker's</h3>
+                            </div>
+                        )}
+                        {team === true &&(
+                            <div className='pageHead'>
+                                <h3>Teams Of Worker's</h3>
+                            </div>
+                        )}
+                        {contractor === true &&(
+                            <div className='pageHead'>
+                                <h3>Contractors With Team</h3>
+                            </div>
+                        )}
+
                         <div className='displayWorkers'>
                         {output.map((person) => {
-                        console.log(person)
+                        // console.log(person)
                         return (    
                             <div key={person.userName} className="boxDiv">
                                 <div >
                                     <h3>Username: {person.userName}</h3>
-                                    <p>Contact Number: {person.contactNumber}</p>
-                                    <p>Email: {person.emailID}</p>
-                                    <p>City: {person.city}</p>
+                                    <p ><span className='heading'>Contact Number:</span> {person.contactNumber}</p>
+                                    <p ><span className='heading'>Email:</span> {person.emailID}</p>
+                                    <p ><span className='heading'>City:</span> {person.city}</p>
                                     {otherEntries(person)}
-                                    <button onClick={toPlaceOrder} className='toOrderBtn'>To Order</button>
+                                    <button onClick={()=>toPlaceOrder(person)} className='toOrderBtn'>To Order</button>
                                     <Modal isOpen={showForm} onRequestClose={closeForm}>
                                         <h2 className='modalHead'>Share some description about project</h2>
                                         <form autoComplete="off" onSubmit={handlePlacedOrder} className='modalForm'>
                                             
                                             <TextField
                                                 required
-                                                name="orderReceiverName"
+                                                name="addressOfOrder"
                                                 className='entrySection'
                                                 type="string"
                                                 variant="outlined"
-                                                label="Enter Worker's Username To Whom You Want To Send Order..."
-                                                value={orderPlaced.orderReceiver}
-                                                onChange={(e) => setPlacedOrder({ ...orderPlaced, orderReceiver: e.target.value,orderPlacer: dealersName })}
+                                                label="Enter Your's Address"
+                                                value={orderPlaced.addressOfOrder}
+                                                onChange={(e) => setPlacedOrder({ ...orderPlaced, addressOfOrder: e.target.value,orderPlacer: dealersName })}
                                             />
                                             <TextField
                                                 required
@@ -142,7 +176,7 @@ const WorkersSearch=()=>{
                                                 className='entrySection'
                                                 type="string"
                                                 variant="outlined"
-                                                label="Enter Address And Description..."
+                                                label="Describe Work..."
                                                 value={orderPlaced.description}
                                                 onChange={(e) => setPlacedOrder({ ...orderPlaced, description: e.target.value })}
                                             />

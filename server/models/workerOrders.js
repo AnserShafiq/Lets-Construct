@@ -4,6 +4,7 @@ const workerOrders = mongoose.Schema({
     orderPlacer: String,
     orderReceiver: String,
     orderStatus: String,
+    addressOfOrder: String,
     description: String,
 });
 

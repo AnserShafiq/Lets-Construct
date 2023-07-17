@@ -12,7 +12,7 @@ router.get('/productsSearch',async(req,res)=>{
   {
     try{
       const collection = await Products.find({});
-      console.log(collection)
+      // console.log(collection)
       res.json(collection);
     }catch(error){
       console.error('Error retrieving people:', error);

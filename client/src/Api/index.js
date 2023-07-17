@@ -11,9 +11,11 @@ const url7 = 'http://localhost:5000/productdealers';
 const url8 = 'http://localhost:5000/productdealers/usernames';
 const url9 = 'http://localhost:5000/ProductDealers/login';
 const url10 = 'http://localhost:5000/workerOrders';
-
+const url12 = 'http://localhost:5000/productorders';
 
 export const createProduct = (newUser) => axios.post(url1, newUser);
+
+export const createProductOrder = (newOrder) => axios.post(url12, newOrder);
 
 export const createOrderForWorker = (newOrder) => axios.post(url10, newOrder);
 

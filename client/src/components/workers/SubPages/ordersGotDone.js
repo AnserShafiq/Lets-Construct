@@ -3,14 +3,14 @@ import './styles.css';
 // import { Paper } from "@material-ui/core";
 import axios from 'axios';
 
-const DisplayProducts = () => {
+const CompletedOrders = () => {
   const [outputProducts, setOutputProducts] = useState([]);
   const userdata = JSON.parse(localStorage.getItem('userData'));
   
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get(`/products/${userdata?.userName}`);
+        const response = await axios.get(`/workerorders/doneorders/${userdata?.userName}`);
         setOutputProducts(response.data);
       
       } catch (error) {
@@ -21,21 +21,20 @@ const DisplayProducts = () => {
     fetchProducts();
   }, [userdata]);
 
+
   return (
     <div className='outsidePaperBody'>
-      <h3 className='smallSectionHeads'>Products</h3>
+      <h3 className='smallSectionHeads'>Orders Completed</h3>
       <div className='paperBody'>
         {/* Display the fetched products */}
-        
         <ul>
           {outputProducts.map(product => (
             <li key={product._id}>
               
               <div>
-                <span className='listHead'>Title:</span> {product.title}
-                <span className='listHead'>, Type:</span> {product.type}
-                <span className='listHead'>,<br/> Price:</span> {product.price}
-                <span className='listHead'>, Quantity:</span> {product.quantity}
+                <span className='listHead'>Client:</span> {product.orderPlacer}<br/>
+                <span className='listHead'>Address:</span> {product.addressOfOrder}<br/>
+
               </div>
               
             </li>
@@ -46,4 +45,4 @@ const DisplayProducts = () => {
   );
 }
 
-export default DisplayProducts;
+export default CompletedOrders;

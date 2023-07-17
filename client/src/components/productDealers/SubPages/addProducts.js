@@ -1,6 +1,6 @@
   
 import React, { useState } from 'react';
-import { TextField, Button, Typography, Paper } from '@material-ui/core';
+import { TextField, Button, Paper } from '@material-ui/core';
 import axios from 'axios';
 
 const AddProducts = () => {
@@ -11,11 +11,6 @@ const AddProducts = () => {
   const [dealer, setDealer] = useState('');
   const [description, setDescription] = useState('');
   const [selectedImages, setSelectedImages] = useState([]);
-
-  // SETTING IMAGES INTO ARRAY FROM HERE
-  const handleImageChange = (event) => {
-    setSelectedImages(event.target.files);
-  };
 
 
   const handleSubmit = async (e) => {
@@ -51,10 +46,8 @@ const AddProducts = () => {
 
   return (
     <div className="outsidePaperBody">
+      <h3 className='smallSectionHeads'>Add / Update Products</h3>
       <Paper className="paperBody">
-        <Typography variant="h6" className="formTitle">
-          Add / Update Products
-        </Typography>
         <form autoComplete="off" onSubmit={handleSubmit} className="productForm">
           <TextField required name="title" variant="outlined" type="string" label="Product's Title"
             className="textFeilds" value={title} onChange={(e) => setTitle(e.target.value)} />
@@ -70,8 +63,8 @@ const AddProducts = () => {
             label="Description" value={description} onChange={(e) => setDescription(e.target.value)} />
           
           {/* IMAGES INPUT FROM HERE */}
-          <input type="file" accept="image/*" multiple onChange={handleImageChange} className='textFeilds'/>
-          
+          {/* <input type="file" accept="image/*" multiple onChange={handleImageChange} className='textFeilds'/>
+           */}
           
           <div>
             <Button variant="contained" color="primary" fullWidth type="submit" size="large">ADD</Button>

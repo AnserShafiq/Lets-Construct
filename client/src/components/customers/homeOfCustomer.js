@@ -28,6 +28,9 @@ const CustomersHome = () =>{
     const handleProductStore= ()=>{
         navigator('/Customers/CustomersHome/ProductsStore');
     }
+    const handleBuildingModels=()=>{
+        navigator('/Customers/CustomersHome/BuildingModels');
+    }
     return(
         <>
             <Header1 />
@@ -44,7 +47,7 @@ const CustomersHome = () =>{
                             <img src={costEstimation} className='btnImg1' alt='costEstimate' onClick={handleCostEstimation}/>
                         </div>
                         <div className='divBox sec2'>
-                            <img src={buildingModels} className='btnImg1' alt='workerLabor'/>
+                            <img src={buildingModels} className='btnImg1' alt='workerLabor' onClick={handleBuildingModels}/>
                             <img src={productStore} className='btnImg1' alt='productsStore' onClick={handleProductStore}/>
                         </div>
                     </div>

@@ -1,6 +1,5 @@
 body{
-    background-color: #7BA1D4;
-    
+    background-color: #7BA1D4;   
 }
 
 .dealersBody{
@@ -9,7 +8,7 @@ body{
     flex-direction: row;
     justify-content: space-around;
     overflow-y:auto;
-    margin-bottom: 16%;
+    margin-bottom: 1%;
 }
 .outsidePaperBody{
     width: 20%;
@@ -18,20 +17,41 @@ body{
     border-width: 30px !important;
     border-radius: 13% !important;
 }
+.outsidePaperBody2{
+    display: grid;
+    width: 85%;
+    padding: 1% 3%;
+    background-color: #6488b6 !important;
+    border-width: 30px !important;
+    border-radius: 50px  !important;
+    margin-bottom: 1.2%;
+    margin-left: 4%;
+    margin-right: 4%;
+}
 .paperBody{
-    height: 30vh ;
+    height: 25vh;
     padding-bottom: 3%;
     background-color: #6488b600 !important;
     justify-content: center;
     overflow-y:auto;
 }
-.formTitle{
-    text-align: center !important;
-    color: #16427C;
-    font-size: 20px !important;
-    font-family:inherit;
-    font-weight: 700 !important;
+.paperBody2{
+    height: 14.5vh ;
+    padding-bottom: 3%;
+    border:0px !important;
+    background-color: #6488b600 !important;
+    justify-content: center;
+    overflow-y:auto;
+}
+.smallSectionHeads{
+    text-align: center;
+    margin:2% 0%;
+    text-transform: uppercase;
     text-decoration: underline;
+    letter-spacing: 1px;
+}
+.paperBody2 li{
+    list-style-type:upper-roman;
 }
 .productForm{
     justify-content: center;
@@ -47,4 +67,48 @@ body{
 .logBtnPD{
     margin: 0.2% 0% 0% 94%;
     background-color: #6488b6;
+}
+.newOrdersListHead{
+    text-align: center;
+    color:#16427C;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: underline;
+    margin: 2px 0px 0px 0px;
+}
+.btnDiv{
+    width: 10%;
+    margin: 0%;
+    padding: 1% 0% 1% 1%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.acceptBtn{
+    background-color: #16427C !important;
+    color:#BFBFBF !important;
+    font-weight: 900 !important;
+    width:30px;
+    padding: 3% !important;
+}
+.acceptBtn:hover{
+    background-color: #BFBFBF !important;
+    color: #16427C !important;
+}
+.deliverySent{
+    font-size: 15px;
+    text-decoration: underline;
+    text-transform: uppercase;
+    margin: 0% 0% 0% 32%;
+}
+.deliverySent:hover{
+    cursor: pointer;
+    color:  #BFBFBF;
+}
+.dealersHomeHead{
+    margin:1.2% 0%;
+    text-align: center;
+    font-size: 40px;
+    letter-spacing: 2px;
 }

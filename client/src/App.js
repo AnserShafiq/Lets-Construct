@@ -6,6 +6,7 @@ import CustomersHome from './components/customers/homeOfCustomer.js';
 import Workers from './Pages/Workers/home.js';
 import WorkersHome from './components/workers/SubPages/home.js';
 import WorkerSearch from './components/customers/workersorlabors/page.js'
+import BuildingModels from './components/customers/buildingModels/page.js';
 import CostEstimation from './components/customers/costEstimation/page.js'
 import ProductsStore from './components/customers/productsStore/page.js'
 import ProductDealers from './Pages/ProductDealers/Home.js';
@@ -19,11 +20,13 @@ const App = () =>{
                 <Route path='/Customers/CustomersHome' element={<CustomersHome/>}/>
                 <Route path='/Workers' element={<Workers/>}/>
                 <Route path='/Workers/WorkersHome' element={<WorkersHome/>}/>
+                <Route path='/Customers/CustomersHome/BuildingModels' element={<BuildingModels/>}/>
                 <Route path='/Customers/CustomersHome/WorkersSearch' element={<WorkerSearch/>}/>
                 <Route path='/Customers/CustomersHome/CostEstimation' element={<CostEstimation/>}/>
                 <Route path='/Customers/CustomersHome/ProductsStore' element={<ProductsStore/>}/>
                 <Route path='/ProductDealers' element={<ProductDealers/>}/>
                 <Route path='/ProductDealers/Home' element={<ProductDealersHome/>}/>
+                
 
             </Routes>
         </>

@@ -10,6 +10,7 @@ import newWorkerRoutes from './routes/worker.js';
 import productDealers from './routes/productDealers.js';
 import forProducts from './routes/products.js';
 import workerOrderPlacement from './routes/workerOrders.js';
+import productOrderPlacement from './routes/productOrders.js';
 
 const app = express();
 
@@ -30,12 +31,16 @@ app.use('/workers/login', newWorkerRoutes);
 app.use('/workers/singleWorkers', newWorkerRoutes);
 app.use('/workers/onlyTeam', newWorkerRoutes);
 app.use('/workers/contractorWithTeam', newWorkerRoutes);
+app.use('/workerorders', workerOrderPlacement);
 app.use('/productdealers', productDealers);
 app.use('/productdealers/login', productDealers);
 app.use('/products', forProducts);
 app.use('/products/:ownerID', forProducts);
 app.use('/products/productsSearch', forProducts);
-app.use('/workerorders', workerOrderPlacement);
+app.use('/productorders', productOrderPlacement);
+app.use('/productorders/:orderReceiver', productOrderPlacement);
+app.use('/productorders/neworders/:orderReceiver', productOrderPlacement);
+app.use('/workerorders/neworders/:orderReceiver', workerOrderPlacement);
 
 const CONNECTION_URL = 'mongodb+srv://two:onetwothree@fyp.8i5tqbr.mongodb.net/?retryWrites=true&w=majority';
 const PORT = process.env.PORT || 5000;

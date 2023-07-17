@@ -43,7 +43,7 @@
     background-color: #16427C !important;
     color:#BFBFBF !important;
 }
-.btnDiv{
+.btnDivSearch{
     margin: 1% 45%;
 }
 .productsHead{
@@ -60,11 +60,10 @@
     padding: 0%;
     margin-top: 0%;
 }
+
 .productDisplay{
-    display: flex;
-    flex-direction: column;
-    align-items:normal;
-    line-height: 0.5px ;
+    display:block;
+    line-height: 1px ;
     padding: 1% 3%;
     background-color: #BFBFBF;
     border-radius: 30px;
@@ -76,9 +75,18 @@
     margin-top:5% ;
     text-transform: uppercase;
 }
+.innerHead2{
+    width:50%;
+}
 .innerWord{
     font-weight: 400;
     font-size: 15px;
+    text-transform: capitalize;
+}
+.innerWord2{
+    font-weight: 400;
+    font-size: 17px;
+    padding-left: 2%;
     text-transform: capitalize;
 }
 .orderBtn{
@@ -97,7 +105,73 @@
 }
 .allProducts {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: flex-start;
     justify-content: center;
+    margin: 1%;
+    padding: 0%;
   }
+.description {
+    font-weight: 300;
+    text-transform: none;
+  }
+.notBtn{
+    width:90%;
+    display: flex;
+    flex-direction: column;
+}
+.notBtnInner{
+    display: flex;
+    flex: 1 0 33%;
+}
+.lower{
+    border: 1px solid #16427C;
+    border-right-width: 5px ;
+    border-bottom-left-radius: 25px !important;
+}
+.upper{
+    border: 1px solid #16427C;
+    border-right-width: 5px ;
+    border-top-left-radius: 25px !important;
+}
+.productDisplay2{
+    display:flex;
+    flex-direction: row;
+    padding: 0%;
+    background-color: #BFBFBF;
+    border-radius: 30px;
+    border: 5px solid #16427C; 
+    margin: 1%;
+}
+.innerHead2{
+    font-size: 15px;
+    margin: 0%;
+    padding: 1%;
+    display:flex;
+    flex-direction: column;
+    text-transform: uppercase;
+}
+.centerBorder{
+    border-left: 2px solid #16427C;
+}
+.btnDiv3{
+    width: 10%;
+    margin: 0%;
+    padding: 3% 0% 3% 3%;
+}
+.orderBtn2{
+    background-color: #16427C !important;
+    color:#BFBFBF !important;
+    font-weight: 900 !important;
+}
+.orderBtn2:hover{
+    background-color: #BFBFBF !important;
+    color: #16427C !important;
+}
+.entrySection2{
+    margin: 1% !important;
+    width: 98%;
+}
+.orderFormBtn{
+    margin-left: 45% !important; 
+}
