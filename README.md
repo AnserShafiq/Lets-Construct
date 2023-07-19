@@ -15,7 +15,7 @@ Each kind of the user can create his own id and have a different web designed vi
 # Screens Display:
 
 1) Main page - Right having only sign in/ sign up options for the users not giving direct access to any kind of user:
-![Main](https://github.com/AnserShafiq/Final-Year-Project/assets/80700520/fb8663d8-1b9e-4416-94b2-32048e528b45)
+c:\Users\user\Desktop\Screens\Main.PNG
 
 2) Customer's Subpages:
    1) SignIn/SignUp:
