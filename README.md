@@ -20,21 +20,38 @@ Each kind of the user can create his own id and have a different web designed vi
 2) Customer's Subpages:
    1) SignIn/SignUp:
       ![C-Login](https://github.com/AnserShafiq/Final-Year-Project/assets/80700520/5e2d9dfc-53ad-4b0d-8d7f-36667cc705b5)
-   2) Home Page:
-      ![C-Home](https://github.com/AnserShafiq/Final-Year-Project/assets/80700520/cd689cc5-a029-49c3-871b-183c3a13ce71)
-   3) Labors/Workers:
+      
+   3) Home Page:
+      ![C-Home](https://github.com/AnserShafiq/Final-Year-Project/assets/80700520/929f47bf-3aec-404b-a108-3790364bcb6d)
+
+   4) Labors/Workers:
       ![C-Labors](https://github.com/AnserShafiq/Final-Year-Project/assets/80700520/2456df0f-2da5-4c99-a8d0-53c43aa047a8) If selected single worker: ![C-singleLabors](https://github.com/AnserShafiq/Final-Year-Project/assets/80700520/82a3cd5e-fe16-4372-8811-909bbd5ad3a7)
  If selected teamed workers: ![C-teamLabor](https://github.com/AnserShafiq/Final-Year-Project/assets/80700520/49edba70-6ab1-4217-9a8d-48f50320cc80) If selected contractor: ![C-contractorWithLabors](https://github.com/AnserShafiq/Final-Year-Project/assets/80700520/201ba0f3-9fc9-4bc8-9185-aab17032c741)
 
-
-
-   4) Building Models:
+   5) Building Models:
       ![C-BuildingModals](https://github.com/AnserShafiq/Final-Year-Project/assets/80700520/9d5e5c46-2c51-4e0a-b140-e2619732564f)
-   5) Cost Estimation:
+      
+   7) Cost Estimation:
       ![C-CostEstimationFilled](https://github.com/AnserShafiq/Final-Year-Project/assets/80700520/d67ecc5c-9f11-4874-b01d-8585f4193dd7) Example: ![C-CostEstimationOutput](https://github.com/AnserShafiq/Final-Year-Project/assets/80700520/d9d084f8-dae5-429e-b2d7-af25d5a22162)
 
-   6) Product's Store:
+   8) Product's Store:
       ![C-ProductStore](https://github.com/AnserShafiq/Final-Year-Project/assets/80700520/bbe14954-c7e5-46c8-b32c-230cc826f399) Searched Product: ![C-ProductSearched](https://github.com/AnserShafiq/Final-Year-Project/assets/80700520/fbb97462-1ff1-409f-a587-0f39ce2389f9)
+
+3) Worker's Subpages:
+   1) SignIn/SignUp:
+      ![W-Login](https://github.com/AnserShafiq/Final-Year-Project/assets/80700520/f797098d-6362-4c04-b9ff-fa219ebe71cb)
+      
+   3) Home Page:
+      ![Screenshot (203)](https://github.com/AnserShafiq/Final-Year-Project/assets/80700520/2729eb4d-c0f6-4e75-866d-10e82bcd7314)
+      
+4) Product-Dealer's Subpages:
+   1) SignIn/SignUp:
+      ![PD-Login](https://github.com/AnserShafiq/Final-Year-Project/assets/80700520/37c8f05a-8228-4150-9370-419b9359149c)
+      
+   3) Home Page:
+      ![Screenshot (204)](https://github.com/AnserShafiq/Final-Year-Project/assets/80700520/c68a55c5-9d75-4abf-a6ff-e9a32f4a8336)
+      
+
 
 
 
