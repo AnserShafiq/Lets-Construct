@@ -16,7 +16,7 @@ Each kind of the user can create his own id and have a different web designed vi
 # Screens Display:
 
 1) Main page - Right having only sign in/ sign up options for the users not giving direct access to any kind of user:
-c:\Users\user\Desktop\Screens\Main.PNG
+![Try](client/src/images/ForRead/Main.PNG)
 
 2) Customer's Subpages:
    1) SignIn/SignUp:
