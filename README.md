@@ -12,6 +12,7 @@ The idea was to create a platform to give access to users to order workers, cons
 
 Each kind of the user can create his own id and have a different web designed view for all. For the customers right now there is an option to place orders depending upon the need or requirements. And user-worker or user-dealer there are option for accepting the order or cancelling the order. All the new/accepted/completed orders are having seperate list view to display them to the user.
 
+
 # Screens Display:
 
 1) Main page - Right having only sign in/ sign up options for the users not giving direct access to any kind of user:
